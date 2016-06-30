@@ -24,7 +24,7 @@
 		<ul>
 			<li>15px padding</li>
 			<li>通过@media (min-width: )媒体查询，自动确定宽度。3个阈值~1200~992~768~ 分别对应1170 970 750 auto</li>
-			<li>格栅系统 class="row" class="col-lg-$num" class="col-md-$num" class="col-xs-$num" ，三个不同的col分别对应不同的阈值,当小于阈值时每个col变宽填充父容器并自动inline，xs始终保持在同一行，col还可以组合使用.当同一行的多个col大于12时，多出的部分换到下一行,上面的铺满</li>
+			<li>格栅系统 class="row" class="col-lg-$num" class="col-md-$num" class="col-sm-$num" class="col-xs-$num" ，四个不同的col分别对应不同的阈值,当小于阈值时每个col变宽填充父容器并自动inline，xs始终保持在同一行，col还可以组合使用.当同一行的多个col大于12时，多出的部分换到下一行,上面的铺满</li>
 		</ul>
 	</div>
 	<div class="container">
@@ -37,6 +37,11 @@
 			<div class="col-md-4">col-md-4</div>
 			<div class="col-md-4">col-md-4</div>
 			<div class="col-md-4">col-md-4</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">col-sm-4</div>
+			<div class="col-sm-4">col-sm-4</div>
+			<div class="col-sm-4">col-sm-4</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-4">col-xs-4</div>
