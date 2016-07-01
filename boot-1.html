@@ -9,15 +9,24 @@
 		.container-fluid { background:#ff6; }
 		.container { /* width:1000px; */ background:#0df; }
 		div[class*="col-"] { border:1px solid #ccc; background:#ff6;}
+
+		.tip1 { width:30px;height:300px;background:#6f6; right:0; z-index:1; }
+		.tip2 { width:30px;height:90px;background:#f66; right:0; z-index:1; }
     </style>
 	<title>Document</title>
 </head>
-<body>
+<body style="height:2000px">
 	<div class="container-fluid">
 		class:container-fluid 
 		<ul>
 			<li>15px padding</li>
 		</ul>
+		<div class="row">
+			<div class="tip1 affix visible-lg-block">tip1</div>
+			<div class="tip2 affix hidden-lg">tip2</div>
+			可以通过 visible-*-* 和hidden-* 这种响应式工具根据不同窗口大小来控制元素的显示和隐藏
+			pull-left/right 使用类似浮动的方式使元素向左或向右,也可以使用 affix，然后设置lift/right(px)值来实现固定定位
+		</div>
 	</div>
 	<div class="container">
 		class:container 
@@ -63,9 +72,11 @@
 		<div class="row">
 			<div class="col-lg-4 col-lg-push-9">col-lg-4 col-lg-push-9 前</div>
 			<div class="col-lg-4">col-lg-4</div>
+			<div class="clearfix"></div>
+			从这个例子可以看出，push是用类似相对定位的原理实现的
 		</div>
 		<hr />
-		<div class="row" style="background: red">
+		<div class="row">
 			<div class="col-lg-4">col-lg-4 前</div>
 			<div class="col-lg-4 col-lg-offset-5">col-lg-4 col-lg-offset-5</div>
 			<div class="clearfix"></div>
@@ -76,7 +87,12 @@
 			<div class="col-lg-4">col-lg-4 前</div>
 			<div class="col-lg-4 col-lg-push-5">col-lg-4 col-lg-push-5</div>
 		</div>
+		<hr />
+		<hr />
+		
+
 	</div>
+	(nlog<sub>2</sub>x)<sup>2</sup>
 
 </body>
 <script src="js/jquery-1.12.4.js"></script>
