@@ -12,6 +12,7 @@
 
 		.tip1 { width:30px;height:300px;background:#6f6; right:0; z-index:1; }
 		.tip2 { width:30px;height:90px;background:#f66; right:0; z-index:1; }
+		.tip1 .glyphicon,.tip2 .glyphicon{ font-size:30px; color:#fff; }
     </style>
 	<title>Document</title>
 </head>
@@ -22,8 +23,8 @@
 			<li>15px padding</li>
 		</ul>
 		<div class="row">
-			<div class="tip1 affix visible-lg-block">tip1</div>
-			<div class="tip2 affix hidden-lg">tip2</div>
+			<div class="tip1 affix visible-lg-block"><span class="glyphicon glyphicon-apple"></span></div>
+			<div class="tip2 affix hidden-lg"><span class="glyphicon glyphicon-apple"></span></div>
 			可以通过 visible-*-* 和hidden-* 这种响应式工具根据不同窗口大小来控制元素的显示和隐藏
 			pull-left/right 使用类似浮动的方式使元素向左或向右,也可以使用 affix，然后设置lift/right(px)值来实现固定定位
 		</div>
