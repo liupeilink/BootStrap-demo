@@ -11,7 +11,7 @@
 		div[class*="col-"] { border:1px solid #ccc; background:#ff6;}
 
 		.tip1 { width:30px;height:300px;background:#6f6; right:0; z-index:1; }
-		.tip2 { width:30px;height:90px;background:#f66; right:0; z-index:1; }
+		.tip2 { width:30px;height:90px;background:#f66; /*right:0;*/ z-index:1; }
 		.tip1 .glyphicon,.tip2 .glyphicon{ font-size:30px; color:#fff; }
     </style>
 	<title>Document</title>
@@ -24,7 +24,7 @@
 		</ul>
 		<div class="row">
 			<div class="tip1 affix visible-lg-block"><span class="glyphicon glyphicon-apple"></span></div>
-			<div class="tip2 affix hidden-lg"><span class="glyphicon glyphicon-apple"></span></div>
+			<div class="tip2 pull-right hidden-lg"><span class="glyphicon glyphicon-apple"></span></div>
 			可以通过 visible-*-* 和hidden-* 这种响应式工具根据不同窗口大小来控制元素的显示和隐藏
 			pull-left/right 使用类似浮动的方式使元素向左或向右,也可以使用 affix，然后设置lift/right(px)值来实现固定定位
 		</div>
@@ -66,8 +66,10 @@
 	</div>
 	<div class="container">
 		<div class="row">
+			<!-- <div class="col-lg-4">col-lg-4</div> -->
 			<div class="col-lg-4 col-lg-offset-9">col-lg-4 col-lg-offset-9 前</div>
 			<div class="col-lg-4">col-lg-4</div>
+			<!-- 当一行有多个元素的时候offset超出容器会移到下一行，相对于下一行行首偏移那么多 -->
 		</div>
 		<hr />
 		<div class="row">
@@ -104,7 +106,9 @@
 		<a href="#" class="text-success">text-success</a>
 		<a href="#" class="text-warning">text-warning</a>
 		<a href="#" class="text-danger">text-danger</a>
-		<a href="#" class="text-info">text-info</a><br/><br/>
+		<a href="#" class="text-info">text-info</a><br/>
+		<div class="alert alert-success">alert alert-success</div>
+		<br/>
 		<div class="panel panel-primary">
 			<div class="panel-heading">panel-heading</div>
 			<div class="panel-body">panel-body</div>
@@ -135,13 +139,167 @@
 		<button class="btn btn-primary">button标签</button> <br><br>
 
 		<a href="#" class=" btn btn-primary btn-block ">a btn-block</a>
-	    
+	    <br>
+		<div class="btn-group btn-group-justified">
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			
+		</div>
+		a标签的btn外加class为"btn-group btn-group-justified"的父容器可以让这个按钮组自适应父容器宽度（端点对齐）input 和button不能这样，<span style="color:red">&lt;input&gt;和&lt;button&gt;元素需要给每一个表单元素都加一个btn-group父级，然后再使用最外层的类“btn-group btn-group-justified”</span>
+		<br>
+		<div class="btn-group btn-group-justified">
+			<div class="btn-group">
+				<input type="button" value="基本" class="btn btn-primary" />
+			</div>
+			<div class="btn-group">
+				<input type="button" value="基本" class="btn btn-primary" />
+			</div>
+			<div class="btn-group">
+				<input type="button" value="基本" class="btn btn-primary" />
+			</div>
+		</div>
+		<br>
+		<div class="btn-group-vertical">
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			<a href="#" class="btn btn-primary">a btn btn-primary</a>
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			
+		</div>
+		<div class="btn-group-vertical btn-group-lg">
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			<a href="#" class="btn btn-primary">a btn btn-primary</a>
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			
+		</div>
+		<div class="btn-group-vertical btn-group-sm">
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			<a href="#" class="btn btn-primary">a btn btn-primary</a>
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			
+		</div>
+		<div class="btn-group-vertical btn-group-xs">
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			<a href="#" class="btn btn-primary">a btn btn-primary</a>
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			
+		</div>
+		btn-group-vertical 父容器不加btn-group
 
+		<br><br>
+		<a href="" class="btn btn-primary">btn btn-primary<span class="caret"></span></a>a内加span class为“caret” ，button也可以，input不适合
+		<br><br>
+		<div class="btn-group dropup">
+			<a href="" class="btn btn-primary">a btn btn-primary</a>
+			<a href="#" class="btn btn-primary"><span class="caret"></span></a>
+			
+			
+		</div>
+		父容器使用按钮组，并设置dropup参数
 
+		<br><br>
+		<h2>下拉菜单</h2>
+		<div class="row" style="height:200px">
+			<div class="col-lg-4">
+				<div class="dropdown open ">
+					  <button class="btn btn-default dropdown-toggle btn-block" type="button"  data-toggle="dropdown">
+					    Dropdown
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu dropdown-menu-right">
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+					    <li><a href="#">Another action</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+					  </ul>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="dropdown open pull-right">
+					<button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown">
+					    Dropdown
+					    <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+					    <li><a href="#">Another action</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		自定义属性 data-* JS交互触发器 data-toggle="dropdown" dropdown是方法名
+		aria-* 帮助特殊人群 aria-haspopup="true"
+		aria-expanded="true" 起始的时候是隐藏的 让残障人士听到 ul aria-lebelledby="[button_id]" role="menu"描述状态
+		<br>
+		div role="checkbox" aria-label="checked"
 
-
-		
-
+		<br><br>
+		<div class="row" style="height:200px">
+			<div class="col-lg-4">
+				<div class="dropdown open ">
+					  <button class="btn btn-default dropdown-toggle btn-block" type="button"  data-toggle="dropdown">
+					    Dropdown
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu dropdown-menu-right">
+					    <li class="active" role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+					    <li class="disabled"><a href="#">Another action</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+					  </ul>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="dropdown open pull-right">
+					<button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown">
+					    Dropdown
+					    <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li class="dropdown-header">第一部分</li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+					    <li><a href="#">Another action</a></li>
+					    <li class="divider"></li>
+					    <li class="dropdown-header">第二部分</li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="dropdown open">
+					<button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown">
+					    Dropdown
+					    <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu btn-block">
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+					    <li><a href="#">Another action</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="height:200px">
+			<div class="col-lg-4" style="margin-top:100px">
+				<div class="dropup open ">
+					  <button class="btn btn-default dropdown-toggle btn-block" type="button"  data-toggle="dropdown">
+					    Dropup
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu dropdown-menu-right">
+					    <li class="active text-center"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+					    <li class="disabled text-center"><a href="#">Another action</a></li>
+					    <li class=" text-center"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+					    <li class="text-center"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+					  </ul>
+				</div>
+			</div>
+			
+		</div>
 	</div>
 	(nlog<sub>2</sub>x)<sup>2</sup>
 

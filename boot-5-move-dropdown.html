@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <style>
+		.dropdown-menu{
+			animation: 0.2s linear FadeIn;
+		}
+		@keyframes FadeIn {
+			0%{opacity: 0; /*transform: translateY(-20px);*/}
+			100%{opacity:1; /*transform: translateY(0);*/}
+		}
+    </style>
+	<title>Document</title>
+</head>
+<body>
+<div class="container">
+	<div class="dropdown">
+		<button class="btn dropdown-toggle" >展开
+			<span class="caret"></span>
+		</button><!-- data-toggle="dropdown" -->
+		<!-- data-target=".dropdown" 指定目标打开其他菜单，并使其他菜单 add 此菜单的data-toggle属性 -->
+		<ul class="dropdown-menu">
+			<li><a href=""><span class="glyphicon glyphicon-cloud"></span> 1</a></li>
+			<li><a href=""><span class="glyphicon glyphicon-cloud"></span> 2</a></li>
+			<li><a href=""><span class="glyphicon glyphicon-cloud"></span> 3</a></li>
+			<li><a href=""><span class="glyphicon glyphicon-cloud"></span> 4</a></li>
+		</ul>
+	</div>
+</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+
+	// if(window.navigator.userAgent.toLowerCase().indexOf("mobile")==-1){
+	// 	var timer = null
+	// 	$(".dropdown-toggle").hover(function(){
+	// 		clearTimeout(timer)
+	// 		$(this).parent().addClass("open")
+
+	// 	},function(){
+	// 		// clearTimeout(timer)
+	// 		timer = setTimeout(function(){
+	// 			$(".dropdown").removeClass("open")
+	// 		},200)
+			
+	// 	})
+	// 	$(".dropdown-menu").hover(function(){
+	// 		clearTimeout(timer);
+	// 	},function(){
+	// 		timer = setTimeout(function(){
+	// 			$(".dropdown").removeClass("open")
+	// 		},200)
+	// 	})
+		
+	// }
+	$(".dropdown-toggle").dropdown()
+
+	$(".dropdown-toggle").dropdown("toggle")
+
+	$(".dropdown").on("show.bs.dropdown", function(){
+		alert("show")
+	})
+	$(".dropdown").on("shown.bs.dropdown", function(){
+		alert("shown")
+	})
+	$(".dropdown").on("hide.bs.dropdown", function(){
+		alert("hide")
+	})
+	$(".dropdown").on("hidden.bs.dropdown", function(){
+		alert("hidden")
+	})
+</script>
+</html>
